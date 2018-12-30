@@ -5,7 +5,9 @@ import (
 	"math"
 	"math/cmplx"
 	"math/rand"
-	"github.com/karthikvempati/algorithms/gotour"
+	"time"
+	"github.com/karthikvempati/algorithms/interfaces"
+	"github.com/karthikvempati/algorithms/goroutines"
 )
 
 var (
@@ -52,10 +54,20 @@ func main() {
 	x,y := 1,2
 	fmt.Println(swap1(&x,&y))
 	*/
+	goroutine()
 	c := gotour.Circle{Radius:9}
 	r := gotour.Rectangle{Width:8,Breadth:6}
 	printArea(c, r)
 	printCircumference(c,r)
+
+}
+
+func goroutine(){
+	for i:=0;i<2;i++ {
+		go routine.PrintInt(i)
+	}
+	amt := time.Duration(rand.Intn(250))
+	time.Sleep(time.Millisecond * amt)
 }
 
 func printArea(s...gotour.Shape){
